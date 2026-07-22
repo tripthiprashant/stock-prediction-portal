@@ -1,16 +1,17 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Header() {
   return (
    <>
-      <nav className='navbar container pt-3 pb-3 align-items-start'>
-        <a href="" className='navbar-brand text-light'>
+      <nav className='navbar container pt-3 pb-3 align-items-start '>
+        <Link to='/' href="" className='navbar-brand text-light'>
           Stock Prediction Portal
-        </a>
+        </Link>
         <div>
-          <a  className='btn btn-outline-info' href="">Login</a>
+          <Link className='btn btn-outline-info' to='/login'>Login</Link>
           &nbsp;
-          <a  className='btn btn-info' href="">Register</a>
+          <Link to='/register'  className='btn btn-info' href="">Register</Link>
         </div>
 
       </nav>
