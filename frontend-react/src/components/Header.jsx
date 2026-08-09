@@ -25,12 +25,18 @@ function Header() {
       </Link>
 
       {isLoggedIn ? (
+        <div>
+        <Link className='btn btn-info rounded' to='/dashboard'>
+          Dashboard
+        </Link>
+        &nbsp;
         <button
           className="btn btn-danger rounded"
           onClick={handleLogout}
         >
           Logout
         </button>
+        </div>
       ) : (
         <div>
           <Link className="btn btn-outline-info" to="/login">
