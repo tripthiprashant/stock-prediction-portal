@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import axios from "axios";
+import axiosinstance from "../../axiosinstance";
 
 const Dashboard = () => {
     const accessToken = localStorage.getItem("accessToken");
@@ -7,13 +8,8 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchProtectedData = async () => {
             try {
-                const response = await axios.get(
-                    "http://127.0.0.1:8000/api/v1/protected_view/",
-                    {
-                        headers: {
-                            Authorization: `Bearer ${accessToken}`,
-                        },
-                    }
+                const response = await axiosinstance.get(            
+                    "/protected_view/"
                 );
                 console.log(response.data);
             } catch (error) {

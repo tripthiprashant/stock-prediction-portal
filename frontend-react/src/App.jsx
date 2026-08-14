@@ -8,6 +8,8 @@ import Register from './components/Register';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AuthProvider from './AuthProvider';
 import Dashboard from './components/dashboard/Dashboard';
+import PrivateRouter from './PrivateRouter';
+import PublicRoute from './PublicRoute';
 
 function App() {
   return (
@@ -16,9 +18,9 @@ function App() {
       <Header/>
         <Routes>
           <Route path="/" element={<Main/>} />
-          <Route path="/register" element={<Register />} />
-          <Route path='/login' element={<Login/>}/>
-          <Route path='/dashboard' element={<Dashboard />}></Route>
+          <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
+          <Route path='/login' element={<PublicRoute><Login /></PublicRoute>}/>
+          <Route path='/dashboard' element={<PrivateRouter><Dashboard /></PrivateRouter>}></Route>
         </Routes>
         <Footer/>
       </BrowserRouter>
